@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aretes - Nain Xuping</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: #fff0f5;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #fbc2eb, #fcd6e3);
+}
+
+header h1 {
+    font-family: 'Playfair Display';
+    font-size: 35px;
+    margin: 0;
+}
+
+header p {
+    font-weight: 600;
+}
+
+.back {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: white;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+}
+
+/* BUSCADOR */
+.search-box {
+    display: flex;
+    justify-content: center;
+    margin: 25px 0;
+}
+
+.search-container {
+    position: relative;
+}
+
+.search-container input {
+    width: 280px;
+    padding: 12px 45px 12px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.7);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.search-container i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* GRID */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    padding: 30px;
+}
+
+/* CARD */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+.card-body {
+    padding: 15px;
+    text-align: center;
+}
+
+.price {
+    color: gold;
+    font-weight: bold;
+}
+
+.buy {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background: #25D366;
+    color: white;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+/* MODAL */
+#modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.85);
+    justify-content: center;
+    align-items: center;
+}
+
+#modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 35px;
+    color: white;
+    cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .container { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 500px) {
+    .container { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Aretes 👂🏼</h1>
+<p>Elegancia que destaca en cada detalle</p>
+<a href="index.html" class="back">⬅ Volver</a>
+</header>
+
+<div class="search-box">
+<div class="search-container">
+<input type="text" id="search" placeholder="Buscar joya elegante...">
+<i class="fa fa-search"></i>
+</div>
+</div>
+
+<div class="container">
+
+<!-- 1 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete1.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo Huggie</h3>
+<p>Con forma de mariposa; base de cobre con doble baño de oro de 18K</p>
+<div class="price">C$ 70</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo Huggie" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 2 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete2.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo gota</h3>
+<p>Mitad lizo y mitad circonia con doble baño de oro de 18k base de cobre.</p>
+<div class="price">C$ 200</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo gota" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 3 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete3.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo huggie con una estrella colgante</h3>
+<p>llena de circonia con doble baño de oro de 18k y base de cobre</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo huggie con una estrella colgante" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 4 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete4.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete Argolla tipo hoops</h3>
+<p>Estilo artístico deco o vintage con doble baño de oro de 18k base de cobre</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete Argolla tipo hoops" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 5 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete5.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete doble mitad circonia</h3>
+<p>Con doble baño de 18k base de cobre</p>
+<div class="price">C$ 130</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete doble" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 6 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete6.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo huggie</h3>
+<p>Parte lisa y cuadrado texturizado con circonias</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo huggie" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 7 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete7.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo chunky</h3>
+<p>Diseño en forma de hojas</p>
+<div class="price">C$ 140</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo chunky" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 8 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete8.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo chunky</h3>
+<p>Diseño cola de sirena con circonias</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo chunky" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 9 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete9.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete tipo huggie</h3>
+<p>Forma curva llena de piedras bañado en oro de 18k y base de cobre</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete tipo huggie" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 10 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete10.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes lleno de circonia y piedras de rubí</h3>
+<p>Bañado de oro de 18k y base de cobre</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes lleno de circonia y piedras de rubí" class="buy">Comprar</a>
+</div>
+</div>
+
+<!-- 11 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete11.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes  huggie</h3>
+<p>Abierto con parte de circonias bañado en oro de 18k y base de cobre</p>
+<div class="price">C$ 130</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes huggie" class="buy">Comprar</a>
+</div>
+</div>
+	
+<!-- 12 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete12.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes huggie</h3>
+<p>Con circonia en forma de cuadros bañado en oro de 18k y base de cobre</p>
+<div class="price">C$ 180</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes huggie" class="buy">Comprar</a>
+</div>
+</div>	
+
+<!-- 13 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete13.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes Modernos</h3>
+<p>Geométricos con Detalles de Diamantes</p>
+<div class="price">C$ 170</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes Modernos" class="buy">Comprar</a>
+</div>
+</div>	
+	
+<!-- 14 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete14.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete diseño  de flor de circonia</h3>
+<p>Con argolla lisa dorada, baño de 18k y base de cobre </p>
+<div class="price">C$ 200</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete Diseño de flor de circonia" class="buy">Comprar</a>
+</div>
+</div>		
+	
+<!-- 15 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete15.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes Encanto Rubí Dorado</h3>
+<p>Elegantes aretes con diseño delicado y piedra color rubí, elaborados con baño de oro doble de 18K. Ideales para dar un toque sofisticado y femenino a cualquier look.</p>
+<div class="price">C$ 80</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes Encanto Rubí Dorado" class="buy">Comprar</a>
+</div>
+</div>		
+	
+<!-- 16 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete16.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes Flor Brillante Dorada</h3>
+<p>Hermosos aretes en forma de flor con zirconias brillantes, elaborados con baño de oro doble de 18K. Un diseño delicado y luminoso, perfecto para resaltar tu estilo con elegancia.</p>
+<div class="price">C$ 100</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes Flor Brillante Dorada" class="buy">Comprar</a>
+</div>
+</div>		
+	
+<!-- 17 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete17.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes Corazón Glam Dorado</h3>
+<p>Aretes en forma de corazón con detalles brillantes, elaborados con baño de oro doble de 18K. Un diseño moderno y elegante que aporta un toque romántico.</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes Corazón Glam Dorado" class="buy">Comprar</a>
+</div>
+</div>		
+	
+<!-- 18 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete18.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes planos brillos negro</h3>
+<p>Elegante pieza con baño de oro de 18K, diseñada para resaltar tu estilo con un brillo sofisticado.</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes planos brillos negro" class="buy">Comprar</a>
+</div>
+</div>			
+	
+<!-- 19 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete19.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete brillo ovalado</h3>
+<p>Pieza con baño de oro de 18k, estilo elegante para resaltar tu belleza</p>
+<div class="price">C$ 140</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete brillo ovalado" class="buy">Comprar</a>
+</div>
+</div>			
+	
+<!-- 20 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete20.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete liso</h3>
+<p>Con baño de 18K, con un diseño liso y moderno para hacerte bella.</p>
+<div class="price">C$ 60</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete liso" class="buy">Comprar</a>
+</div>
+</div>			
+	
+<!-- 21 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete21.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Arete de corazón</h3>
+<p>Con baño de oro de 18k con detalle de corazón brillantes sostificado.</p>
+<div class="price">C$ 100</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Arete de corazón" class="buy">Comprar</a>
+</div>
+</div>				
+
+<!-- 22 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete22.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes con diamantes brillantes</h3>
+<p>Con baño de 18k de oro, diseñada para resaltar estilo con brillo.</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes con diamantes brillantes" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 23 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete23.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes brillosos</h3>
+<p>Con baño de 18k de oro, para resaltar tu glamur</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes brillosos" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 24 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete24.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes con diamantes brillante</h3>
+<p>Para resaltar la belleza con baño de 18K</p>
+<div class="price">C$ 180</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes con diamantes brillante" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 25 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete25.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de plata con brillos</h3>
+<p>Con baño de oro de 18K elegante</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de plata con brillos" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 26 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete26.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de flor</h3>
+<p>Con baño de 18k elegante con un toque romántico</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de flor" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 27 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete27.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de flor con brillos elegante</h3>
+<p>Elegante con baño de 18k con estilo cómodo y suave</p>
+<div class="price">C$ 200</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de flor con brillos elegante" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 28 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete28.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes grandes</h3>
+<p>Con baño de oro de 18k, con toque suave y romántico</p>
+<div class="price">C$ 170</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes grandes" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 29 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete29.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de estrellas con brillo</h3>
+<p>Con un baño de 18k, pequeña y suave para darte un toque elegante</p>
+<div class="price">C$ 100</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de estrellas con brillo" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 30 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete30.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes grande</h3>
+<p>Con baño de oro con 18k, con estilo bonito y brillante</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes grande" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 31 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete31.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de mariposa de plata</h3>
+<p>Con baño plata brilloso, con un toque bonito y suave</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de mariposa de plata" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 32 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete32.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes con baño de plata</h3>
+<p>Con estilo puntito suave para darte un toque maravilloso</p>
+<div class="price">C$ 100</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el AAretes con baño de plata" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 33 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete33.jpg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes huggie trenzado bicolor</h3>
+<p>Con baño de oro 18k con estilo suave</p>
+<div class="price">C$ 140</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes huggie trenzado bicolor" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 34 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete34.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes Arracadas Xuping</h3>
+<p>Material de alta calidad doble baño de oro de 18k y cobre</p>
+<div class="price">C$ 70</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes Arracadas Xuping" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 35 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete35.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de sol radiante con Micro-pave</h3>
+<p>Estilo tipo sunburst con bordes festoneado con doble baño de oro de 18k y cobre</p>
+<div class="price">C$ 100</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de sol radiante con Micro-pave" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 36 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete36.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes tipo Huggies o de argolla pequeña </h3>
+<p>Con dije integrado, con una piedra central y doble baño de oro de 18k y cobre.</p>
+<div class="price">C$ 160</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes tipo Huggies o de argolla pequeña" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 37 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete37.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de perla y cristal</h3>
+<p>Diseño floral Geométrico con doble baño de oro de 18k.</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de perla y cristal" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 38 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete38.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Flor Geométrica con perla central</h3>
+<p>Con una flor pentagonal con bordes calados, exterior en doble baño de 18k y cobre.</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Flor Geométrica con perla central" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 39 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete39.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Aretes de Mariposas</h3>
+<p>Con incrustaciones con doble baño de oro de 18k y cobre.</p>
+<div class="price">C$ 90</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Aretes de Mariposas" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 40 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete40.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Pendientes Eternity line</h3>
+<p>Con doble baño de oro de 18k y cobre.</p>
+<div class="price">C$ 150</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Pendientes Eternity line" class="buy">Comprar</a>
+</div>
+</div>				
+	
+<!-- 41 -->
+<div class="card">
+<img src="Imagenes/Aretes/arete41.jpeg" onclick="abrirImagen(this.src)">
+<div class="card-body">
+<h3>Pendiente de Gala Carmesi</h3>
+<p>Bañados en doble baño de oro 18k y cobre.</p>
+<div class="price">C$ 120</div>
+<a href="https://wa.me/50581933507?text=Hola me interesa el Pendiente de Gala Carmesi" class="buy">Comprar</a>
+</div>
+</div>				
+	
+	
+</div>
+
+<!-- MODAL CORREGIDO -->
+<div id="modal">
+<span class="close" onclick="cerrarModal()">✖</span>
+<img id="modal-img">
+</div>
+
+<script>
+function abrirImagen(src){
+document.getElementById("modal").style.display="flex";
+document.getElementById("modal-img").src=src;
+}
+
+function cerrarModal(){
+document.getElementById("modal").style.display="none";
+}
+
+document.getElementById("search").addEventListener("input", function() {
+let value=this.value.toLowerCase();
+document.querySelectorAll(".card").forEach(card=>{
+card.style.display=card.innerText.toLowerCase().includes(value)?"block":"none";
+});
+});
+</script>
+
+</body>
+</html>
